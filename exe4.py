@@ -11,11 +11,12 @@ def divisors(x):
 
 
 
-print(divisors(10))
+#print(divisors(10))
 
 
-x = 6
+x = 10
 numbers = range(x,0,-1)
 
 for x in numbers:
-    print(x)
+    if(10%x == 0):
+        print(x)
