@@ -6,20 +6,23 @@ import random
 
 randNum = random.randint(1,9)
 condition = True
+numOfGuesses = 0
 
-while condition:
+while True:
     print(randNum)
     userInput = input("Enter your Guess: ")
+    numOfGuesses =+1
     print(type(userInput))
 
-    if int(userInput) == randNum:
-        print("You Win, Try again: ")
+    if str(userInput) == "Exit":
+        print("Ending: ")
+        break
+    elif int(userInput) == randNum:
+        print("You won in: " + str(numOfGuesses) + " guess, please Try again: ")
         print("")
         randNum = random.randint(1,9)
+        numOfGuesses = 0
     elif randNum > int(userInput):
         print("The number is higher than your guess: ")
     elif randNum < int(userInput):
         print("The number is lower than your guess: ")
-    elif str(serInput) == "Exit":
-        print("Closing")
-        condition = False
