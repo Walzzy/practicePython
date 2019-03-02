@@ -3,10 +3,6 @@
 def palindrome(myStr):
 
     newStr = myStr[::-1].lower()
-
-    print(newStr)
-    print(myStr)
-
     if newStr == myStr.lower():
         return True
     else:

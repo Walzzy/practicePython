@@ -1,32 +1,25 @@
-print('''Please pick one:
-            rock
-            scissors
-            paper''')
+# -*- coding: utf-8 -*-
+#Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right. (Hint: remember to use the user input lessons from the very first exercise)
 
-while True:
-    game_dict = {'rock': 1, 'scissors': 2, 'paper': 3}
-    player_a = str(input("Player a: "))
-    player_b = str(input("Player b: "))
-    a = game_dict.get(player_a)
-    b = game_dict.get(player_b)
-    dif = a - b
-    print(dif)
-    print(type(dif))
 
-    if dif in [-1, 2]:
-        print('player a wins.')
-        if str(input('Do you want to play another game, yes or no?\n')) == 'yes':
-            continue
-        else:
-            print('game over.')
-            break
-    elif dif in [-2, 1]:
-        print('player b wins.')
-        if str(input('Do you want to play another game, yes or no?\n')) == 'yes':
-            continue
-        else:
-            print('game over.')
-            break
-    else:
-        print('Draw. Please continue.')
-        print('')
+import random
+
+randNum = random.randint(1,9)
+condition = True
+
+while condition:
+    print(randNum)
+    userInput = input("Enter your Guess: ")
+    print(type(userInput))
+
+    if int(userInput) == randNum:
+        print("You Win, Try again: ")
+        print("")
+        randNum = random.randint(1,9)
+    elif randNum > int(userInput):
+        print("The number is higher than your guess: ")
+    elif randNum < int(userInput):
+        print("The number is lower than your guess: ")
+    elif str(serInput) == "Exit":
+        print("Closing")
+        condition = False
